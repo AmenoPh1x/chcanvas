@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>Plugin testing</title>
+    <!--link rel="stylesheet" type="text/css" href="styles/style.css"-->
+    <script>window.jQuery || document.write('<script src="jquery.min.js">\x3C/script>');</script>
+    <script src="jquery.chcanvas.js"></script>
+    <style type="text/css">
+      body{font-family:sans-serif;font-size:14px;}
+      .hidden{display:none;}
+      input, select, textarea{border:1px solid #454545;border-radius:2px;padding:3px 6px;}
+      label{width:100px;display:inline-block;}
+      .form-elem{margin-bottom:10px;}
+      .form-elem .clue{font-size:12px;}
+      .form-elem.error{color:crimson;}
+      .form-elem.error input, .form-elem.error select, .form-elem.error textarea{border-color:crimson;color:crimson;}
+      *[data-showafter]{display:none;}
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <div id="container" style="width:800px;height:800px;background:red;"></div>
+    <script type="text/javascript">
+      //$('#container').setCanvas({autoprint:true}).preloadImages(['paleta.png']);
+      /*
+      function imageCallback(){
+        $('#canvas').print('paleta.png');
+      };
+      
+      $('#canvas').setCanvas({imagesCallback:imageCallback}).preloadImages(['paleta.png']);
+      */
+     
+     function audioCallback(){
+       $('#canvas').reproduce('ko');
+     }
+     
+     $('#canvas').setCanvas({audiosCallback:audioCallback}).preloadAudios(['ko']);
+    </script>
+  </body>
+</html>
